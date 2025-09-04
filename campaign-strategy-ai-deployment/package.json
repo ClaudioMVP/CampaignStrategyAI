@@ -1,1 +1,1 @@
-json { name: campaign-strategy-ai, version: 1.0.0, scripts: { build: echo 'Ready to go' } }
+json { name: campaign-strategy-ai, version: 1.0.0, scripts: { build: cp index.html ./ }

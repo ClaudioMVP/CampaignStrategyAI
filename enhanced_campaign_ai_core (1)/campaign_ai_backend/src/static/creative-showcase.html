@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Generated Creative Variations - Campaign Strategy AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .campaign-context {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            color: white;
+        }
+        
+        .context-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .context-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .context-item strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #ffd700;
+        }
+        
+        .creatives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .creative-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .creative-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        }
+        
+        .creative-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .creative-content {
+            padding: 25px;
+        }
+        
+        .creative-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .creative-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .creative-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-tag {
+            background: #f0f8ff;
+            color: #2563eb;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .creative-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #1d4ed8;
+        }
+        
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #374151;
+        }
+        
+        .btn-secondary:hover {
+            background: #e5e7eb;
+        }
+        
+        .insights-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        
+        .insights-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .insight-item {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #2563eb;
+        }
+        
+        .insight-item h4 {
+            color: #1e40af;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .insight-item p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .creatives-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .context-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 AI-Generated Creative Variations</h1>
+            <p>Dynamic creative generation based on messaging angle and visual theme selections</p>
+        </div>
+        
+        <div class="campaign-context">
+            <h3>📊 Campaign Context</h3>
+            <div class="context-grid">
+                <div class="context-item">
+                    <strong>Company:</strong>
+                    TechSolutions Pro
+                </div>
+                <div class="context-item">
+                    <strong>Campaign Goal:</strong>
+                    Generate Leads
+                </div>
+                <div class="context-item">
+                    <strong>Messaging Angle:</strong>
+                    Time-Saving
+                </div>
+                <div class="context-item">
+                    <strong>Visual Theme:</strong>
+                    Innovation Leadership
+                </div>
+                <div class="context-item">
+                    <strong>Target Audience:</strong>
+                    Small business owners and project managers
+                </div>
+                <div class="context-item">
+                    <strong>Industry:</strong>
+                    Cloud-based project management software
+                </div>
+            </div>
+        </div>
+        
+        <div class="creatives-grid">
+            <div class="creative-card">
+                <img src="/creative-concept-focused.png" alt="Concept-Driven Creative" class="creative-image">
+                <div class="creative-content">
+                    <h3 class="creative-title">Concept-Driven Creative</h3>
+                    <p class="creative-description">
+                        Symbolic and conceptual approach emphasizing core messaging through visual metaphors. 
+                        Features abstract time-saving symbols with futuristic design elements.
+                    </p>
+                    <div class="creative-features">
+                        <span class="feature-tag">Conceptual</span>
+                        <span class="feature-tag">Symbolic</span>
+                        <span class="feature-tag">Abstract</span>
+                        <span class="feature-tag">Futuristic</span>
+                    </div>
+                    <div class="creative-actions">
+                        <a href="/creative-concept-focused.png" download class="btn btn-primary">Download</a>
+                        <button class="btn btn-secondary">Customize</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="creative-card">
+                <img src="/creative-data-visualization.png" alt="Data-Driven Creative" class="creative-image">
+                <div class="creative-content">
+                    <h3 class="creative-title">Data-Driven Creative</h3>
+                    <p class="creative-description">
+                        Infographic-style design highlighting key metrics and performance indicators. 
+                        Shows clear before/after productivity improvements with compelling statistics.
+                    </p>
+                    <div class="creative-features">
+                        <span class="feature-tag">Data-Focused</span>
+                        <span class="feature-tag">Infographic</span>
+                        <span class="feature-tag">Metrics</span>
+                        <span class="feature-tag">Performance</span>
+                    </div>
+                    <div class="creative-actions">
+                        <a href="/creative-data-visualization.png" download class="btn btn-primary">Download</a>
+                        <button class="btn btn-secondary">Customize</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="creative-card">
+                <img src="/creative-lifestyle-context.png" alt="Contextual Creative" class="creative-image">
+                <div class="creative-content">
+                    <h3 class="creative-title">Contextual Creative</h3>
+                    <p class="creative-description">
+                        Real-world application showing the solution in action with target audience. 
+                        Features lifestyle photography with contextual business scenarios.
+                    </p>
+                    <div class="creative-features">
+                        <span class="feature-tag">Lifestyle</span>
+                        <span class="feature-tag">Contextual</span>
+                        <span class="feature-tag">Real-world</span>
+                        <span class="feature-tag">Professional</span>
+                    </div>
+                    <div class="creative-actions">
+                        <a href="/creative-lifestyle-context.png" download class="btn btn-primary">Download</a>
+                        <button class="btn btn-secondary">Customize</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="insights-section">
+            <h3 class="insights-title">
+                💡 AI Creative Strategy Insights
+            </h3>
+            <div class="insights-grid">
+                <div class="insight-item">
+                    <h4>Messaging Alignment</h4>
+                    <p>All three creatives emphasize time-saving benefits through different visual approaches: symbolic representation, data visualization, and real-world context.</p>
+                </div>
+                <div class="insight-item">
+                    <h4>Visual Theme Consistency</h4>
+                    <p>Innovation Leadership theme is reflected through modern tech aesthetics, cutting-edge design elements, and progressive visual styling across all variations.</p>
+                </div>
+                <div class="insight-item">
+                    <h4>Audience Targeting</h4>
+                    <p>Each creative appeals to tech-savvy business professionals with different preferences: abstract thinkers, data-driven decision makers, and context-oriented evaluators.</p>
+                </div>
+                <div class="insight-item">
+                    <h4>A/B Testing Ready</h4>
+                    <p>Three distinct approaches enable comprehensive testing to identify which creative style resonates best with your target audience and drives optimal campaign performance.</p>
+                </div>
+                <div class="insight-item">
+                    <h4>Brand Consistency</h4>
+                    <p>All creatives maintain TechSolutions Pro branding while adapting the visual presentation to match the selected messaging angle and theme combination.</p>
+                </div>
+                <div class="insight-item">
+                    <h4>Campaign Optimization</h4>
+                    <p>Use performance data from these variations to refine future creative generation and optimize messaging strategies for maximum lead generation impact.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
